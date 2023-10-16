@@ -4,7 +4,7 @@
 /**
  * _islower - checks for lowercase character
  *
- * 'c' : int
+ * @c: int
  *
  * My function
  *
