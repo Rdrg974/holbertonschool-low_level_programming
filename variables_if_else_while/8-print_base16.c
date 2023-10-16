@@ -14,6 +14,7 @@ int main(void)
 	int i = 0;
 
 	for (a = 0; a < 16; a++)
+
 		if (a > 9) 
 		{
 			putchar(97 + i);
