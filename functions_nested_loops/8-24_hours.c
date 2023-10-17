@@ -16,6 +16,7 @@ void jack_bauer(void)
 	int l;
 	int j;
 	int k;
+
 	while (i < 3)
 	{
 		l = 0;
@@ -43,6 +44,4 @@ void jack_bauer(void)
 		}
 		i++;
 	}
-}
-	
-		
+}	
