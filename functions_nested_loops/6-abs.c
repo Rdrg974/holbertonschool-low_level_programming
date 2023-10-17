@@ -4,6 +4,8 @@
 /**
  * _abs - computes the absolute value of an integer
  *
+ * @i : integer
+ *
  * My function
  *
  * Return: Absolue value (Success)
