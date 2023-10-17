@@ -15,6 +15,7 @@ void times_table(void)
 	int i = 0;
 	int j;
 	int c;
+
 	while (i < 10)
 	{
 		_putchar('0');
