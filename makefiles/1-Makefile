@@ -1,7 +1,5 @@
 CC=gcc
 SRC=.c
 
-all: school
-
-school:
+all: school.c
 	$(CC) main$(SRC) school$(SRC) -o school       
