@@ -9,9 +9,10 @@
  * Return: Always 0 (Success)
  */
 
-void print_to_hundred(void)
+int main(void)
 {
 	int i;
+
 	for (i = 1; i <= 100; i++)
 	{
 		if ((i % 3 == 0) & (i % 5 == 0))
@@ -23,4 +24,5 @@ void print_to_hundred(void)
 		else
 			printf("%d ", i);
 	}
+	return (0);
 }
