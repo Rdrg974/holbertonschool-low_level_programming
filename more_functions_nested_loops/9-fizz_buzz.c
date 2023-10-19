@@ -2,7 +2,7 @@
 #include "main.h"
 
 /**
- * main - prints the numbers 
+ * main - prints the numbers
  *
  * My function
  *
