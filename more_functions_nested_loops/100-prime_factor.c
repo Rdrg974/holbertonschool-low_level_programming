@@ -20,7 +20,6 @@ void prime_factor(int n)
 	{
 		if ((n % i) == 0)
 		{
-			printf("%d ", i);
 			n = (n / i);
 		}
 		else if (n == 1)
@@ -28,6 +27,7 @@ void prime_factor(int n)
 		else
 			i++;
 	}
+	printf("%d\n", i);
 }
 
 int main()
