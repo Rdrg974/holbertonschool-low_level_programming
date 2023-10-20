@@ -3,6 +3,7 @@
 
 /**
  * prime_factor - finds and prints the largest prime factor
+ *
  * main - excute my function
  *
  * @n: int
