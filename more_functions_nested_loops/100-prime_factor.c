@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include "main.h"
 
 /**
  * prime_factor - finds and prints the largest prime factor
@@ -19,7 +20,7 @@ void prime_factor(int n)
 	{
 		if ((n % i) == 0)
 		{
-			printf("%d, ", i);
+			printf("%d ", i);
 			n = (n / i);
 		}
 		else if (n == 1)
@@ -28,3 +29,9 @@ void prime_factor(int n)
 			i++;
 	}
 }
+
+int main()
+{
+	prime_factor(1231952);
+	return 0;
+}	
