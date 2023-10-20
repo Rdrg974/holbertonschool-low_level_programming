@@ -12,16 +12,16 @@
  * Return: Always i (Success)
  */
 
-int log_10(unsigned int n)
+int log_10(int n)
 {
-        int i = 0;
+	int i = 0;
 
-        while (n > 0)
-        {
-                n /= 10;
-                i++;
-        }
-        return i;
+	while (n > 0)
+	{
+		n /= 10;
+		i++;
+	}
+	return (i);
 }
 
 /**
@@ -44,7 +44,7 @@ int power(int a, int b)
 	{
 		a *= j;
 	}
-	return a;
+	return (a);
 }
 
 /**
@@ -63,7 +63,7 @@ void print_number(int n)
 
 	if (n == 0)
 		_putchar('0');
-	else if ((n < 0) || (n == INT_MIN))
+	else if (n < 0)
 	{
 		n *= (-1);
 		i = log_10(n);
@@ -85,6 +85,6 @@ void print_number(int n)
 				_putchar('0' + (n % 10));
 			else
 				_putchar('0' + ((n / (power(10, (i - 1)))) % 10));
-                }
-        }
+		}
+	}
 }
