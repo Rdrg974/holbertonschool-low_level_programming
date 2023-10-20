@@ -5,7 +5,7 @@
 /**
  * log_10 - prints log10
  *
- * @n - int
+ * @n: - int
  *
  * My function
  *
@@ -27,8 +27,8 @@ int log_10(int n)
 /**
  * power - prints power
  *
- * @a - int
- * @b - int
+ * @a: - int
+ * @b: - int
  *
  * My function
  *
@@ -50,7 +50,7 @@ int power(int a, int b)
 /**
  * print_number - prints an integer
  *
- * @n - int
+ * @n: - int
  *
  * My function
  *
@@ -65,7 +65,10 @@ void print_number(int n)
 		_putchar('0');
 	else if (n < 0)
 	{
-		n *= (-1);
+		if (n == INT_MIN)
+			n == unsigned INT_MIN;
+		else
+			n *= (-1);
 		i = log_10(n);
 		_putchar('-');
 		for (; i > 0; i--)
