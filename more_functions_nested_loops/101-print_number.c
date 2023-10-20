@@ -66,7 +66,7 @@ void print_number(int n)
 	else if (n < 0)
 	{
 		if (n == INT_MIN)
-			n == unsigned INT_MIN;
+			unsigned int n == INT_MIN;
 		else
 			n *= (-1);
 		i = log_10(n);
