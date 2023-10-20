@@ -1,16 +1,15 @@
 #include <stdio.h>
 #include "main.h"
-#define TRUE 0
-#define FALSE 1
+#include <limits.h>
 
 /**
- * print_number - prints an integer
+ * log_10 - prints log10
  *
  * @n - int
  *
  * My function
  *
- * Return: Always 0 (Success)
+ * Return: Always i (Success)
  */
 
 int log_10(unsigned int n)
@@ -25,6 +24,17 @@ int log_10(unsigned int n)
         return i;
 }
 
+/**
+ * power - prints power
+ *
+ * @a - int
+ * @b - int
+ *
+ * My function
+ *
+ * Return: Always a (Success)
+ */
+
 int power(int a, int b)
 {
 	int i;
@@ -36,6 +46,16 @@ int power(int a, int b)
 	}
 	return a;
 }
+
+/**
+ * print_number - prints an integer
+ *
+ * @n - int
+ *
+ * My function
+ *
+ * Return: Always 0 (Success)
+ */
 
 void print_number(int n)
 {
