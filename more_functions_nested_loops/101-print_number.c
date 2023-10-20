@@ -65,8 +65,8 @@ void print_number(int n)
 		_putchar('0');
 	else if (n < 0)
 	{
-		if (n == INT_MIN)
-			n = (INT_MAX + 1);
+		if (n == INT_MIN) 
+			n = INT_MAX;
 		else
 			n *= (-1);
 		i = log_10(n);
