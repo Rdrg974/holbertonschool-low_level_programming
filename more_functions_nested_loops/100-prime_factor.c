@@ -3,6 +3,7 @@
 
 /**
  * prime_factor - finds and prints the largest prime factor
+ * main - excute my function
  *
  * @n: int
  *
@@ -30,8 +31,8 @@ void prime_factor(int n)
 	printf("%d\n", i);
 }
 
-int main()
+int main(void)
 {
-	prime_factor(1231952);
-	return 0;
-}	
+	prime_factor(612852475143);
+	return (0);
+}
