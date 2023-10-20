@@ -12,7 +12,7 @@
  * Return: Always 0 (Success)
  */
 
-void prime_factor(int n)
+void prime_factor(long int n)
 {
 	int i = 2;
 	int vrai = 0;
