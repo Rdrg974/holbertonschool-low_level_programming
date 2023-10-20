@@ -43,7 +43,7 @@ void print_number(int n)
 
 	if (n == 0)
 		_putchar('0');
-	else if (n < 0)
+	else if ((n < 0) || (n == INT_MIN))
 	{
 		n *= (-1);
 		i = log_10(n);
