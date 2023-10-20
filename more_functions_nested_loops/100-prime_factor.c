@@ -2,7 +2,7 @@
 #include "main.h"
 
 /**
- * main - excute my function
+ * prime_factor - print of the largest prime factor
  *
  * @n: int
  *
@@ -29,6 +29,14 @@ void prime_factor(long int n)
 	}
 	printf("%d\n", i);
 }
+
+/**
+ * main - excute my function prime_factor
+ *
+ * My function
+ *
+ * Return: Always 0 (Success)
+ */
 
 int main(void)
 {
