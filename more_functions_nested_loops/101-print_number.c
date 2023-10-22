@@ -74,7 +74,7 @@ void print_number(int n)
 		for (; i > 0; i--)			
 		{
 			if ((i == 1) & (n == INT_MAX))
-				_putchar('8')
+				_putchar('8');
 			else if (i == 1)
 				_putchar('0' + (n % 10));
 			else
