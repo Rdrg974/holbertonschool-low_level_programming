@@ -71,7 +71,7 @@ void print_number(int n)
 			n *= (-1);
 		i = log_10(n);
 		_putchar('-');
-		for (; i > 0; i--)			
+		for (; i > 0; i--)
 		{
 			if ((i == 1) & (n == INT_MAX))
 				_putchar('8');
