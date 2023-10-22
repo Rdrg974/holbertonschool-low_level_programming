@@ -66,30 +66,19 @@ void print_number(int n)
 	else if (n < 0)
 	{
 		if (n == INT_MIN)
-		{
 			n = INT_MAX;
-			i = log_10(n);
-			_putchar('-');
-			for (; i > 0; i--)
-			{
-				if (i == 1)
-					_putchar('8');
-				else
-					_putchar('0' + ((n / (power(10, (i - 1)))) % 10));
-			}
-		}
 		else
-		{
 			n *= (-1);
-			i = log_10(n);
-			_putchar('-');
-			for (; i > 0; i--)
-			{
-				if (i == 1)
-					_putchar('0' + (n % 10));
-				else
-					_putchar('0' + ((n / (power(10, (i - 1)))) % 10));
-			}
+		i = log_10(n);
+		_putchar('-');
+		for (; i > 0; i--)			
+		{
+			if ((i == 1) & (n == INT_MAX))
+				_putchar('8')
+			else if (i == 1)
+				_putchar('0' + (n % 10));
+			else
+				_putchar('0' + ((n / (power(10, (i - 1)))) % 10));
 		}
 	}
 	else
