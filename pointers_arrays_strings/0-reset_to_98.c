@@ -4,7 +4,7 @@
 /**
  * reset_to_98 - takes a pointer as parameter
  *
- * @*n: pointer to an integer 
+ * @n: pointer to an integer
  *
  * Not Return
  */
