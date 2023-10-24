@@ -43,7 +43,7 @@ int _atoi(char *s)
 			moins++;
 		i++;
 	}
-	if (i == len - 1)
+	if (i == len)
 		return (0);
 	while ((s[i + k] >= '0') & (s[i + k] <= '9'))
 		k++;
