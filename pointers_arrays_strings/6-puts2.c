@@ -13,7 +13,7 @@ void puts2(char *str)
 {
 	int i = 0;
 
-	while(1)
+	while (1)
 	{
 		if (str[i] == '\0')
 			break;
