@@ -20,6 +20,6 @@ char *_strcat(char *dest, char *src)
 	for (j = 0; j < i; j++)
 		dest[k + j] = src[j];
 	for (; j < k; j++)
-		dest[j] = '\0';
+		dest[k + j] = '\0';
 	return (dest);
 }
