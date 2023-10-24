@@ -3,11 +3,14 @@
 #include <string.h>
 
 /**
- * _atoi -  convert a string to an integer
+ * power - prints power
  *
- * @s: pointer to an char
+ * @a: - int
+ * @b: - int
  *
- * Return: integer
+ * My function
+ *
+ * Return: Always a or 1 (Success)
  */
 
 int power(int a, int b)
@@ -24,6 +27,14 @@ int power(int a, int b)
 	return (a);
 }
 
+/**
+ * _atoi - convert a string to an integer
+ *
+ * @s: pointer to an char
+ *
+ * Return: integer
+ */
+
 int _atoi(char *s)
 {
 	int i = 0;
@@ -31,7 +42,7 @@ int _atoi(char *s)
 	int len = strlen(s);
 	int plus = 0;
 	int moins = 0;
-	int num = 0;
+	unsigned int num = 0;
 
 	if (s[0] == '\0')
 		return (0);
