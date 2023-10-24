@@ -40,7 +40,6 @@ int _atoi(char *s)
 	int i = 0;
 	int k = 0;
 	int len = strlen(s);
-	int plus = 0;
 	int moins = 0;
 	unsigned int num = 0;
 
@@ -48,9 +47,7 @@ int _atoi(char *s)
 		return (0);
 	while (((s[i] < '0') || (s[i] > '9')) & (s[i] != '\0'))
 	{
-		if (s[i] == '+')
-			plus++;
-		else if (s[i] == '-')
+		if (s[i] == '-')
 			moins++;
 		i++;
 	}
@@ -58,13 +55,12 @@ int _atoi(char *s)
 		return (0);
 	while ((s[i + k] >= '0') & (s[i + k] <= '9'))
 		k++;
-	for (;k > 0; k--)
+	for (; k > 0; k--)
 	{
 		num += (s[i] - '0') * power(10, (k - 1));
 		i++;
 	}
-	if (plus >= moins)
+	if ((moins % 2) == 0)
 		return (num);
-	else
-		return (num *= (-1));
+	return (num *= (-1));
 }
