@@ -34,7 +34,7 @@ int compare(char *x, char *y)
 char *_strstr(char *haystack, char *needle)
 {
 	if (*needle == '\0')
-		return haystack;
+		return (haystack);
 	while (*haystack != '\0')
 	{
 		if ((*haystack == *needle) && compare(haystack, needle))
