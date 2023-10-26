@@ -14,12 +14,12 @@ int compare(char *x, char *y)
 {
 	while (*x && *y)
 	{
-		if (*X != *Y)
+		if (*x != *y)
 			return 0;
 		x++;
 		y++;
 	}
-	return (*Y == '\0');
+	return (*y == '\0');
 }
 
 /**
