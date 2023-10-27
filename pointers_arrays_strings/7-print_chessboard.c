@@ -4,7 +4,7 @@
 /**
  * print_chessboard - prints the chessboard
  *
- * @s: pointer to an array
+ * @a: pointer to an array
  *
  * Not Return
  */
@@ -17,7 +17,7 @@ void print_chessboard(char (*a)[8])
 	while (i < 8)
 	{
 		j = 0;
-		while ( j < 8)
+		while (j < 8)
 		{
 			putchar(a[i][j]);
 			j++;
