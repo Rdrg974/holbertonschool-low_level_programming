@@ -5,22 +5,23 @@
  * prime - returns if the input integer is a prime number
  *
  * @n: an integer
+ * @i: an integer
  *
  * Return: j
  */
 
 int prime(int n, int i)
 {
-  int j = 0;
-  
-  if (n == 1)
-    return (j);
-  else if ((n % i) == 0)
-  {
-    j++;
-    return (j + prime(n/i, i));
-  }
-  return prime(n, (i + 1));
+	int j = 0;
+
+	if (n == 1)
+		return (j);
+	else if ((n % i) == 0)
+	{
+		j++;
+		return (j + prime((n / i), i));
+	}
+	return (prime(n, (i + 1)));
 }
 
 /**
