@@ -12,11 +12,11 @@
 
 int racine2(int n, int i)
 {
-	if (n == i*i)
+	if (n == i * i)
 		return (i);
 	else if (i > n)
 		return (-1);
-	return racine2(n, (i + 1));
+	return (racine2(n, (i + 1)));
 }
 
 /**
