@@ -19,7 +19,7 @@ int main(int argc, char *argv[])
 		printf("Error\n");
 		return (1);
 	}
-	if ((argv[1][0] < '0') || (argv[1][0] > '9'))
+	if (((argv[1][0] < '0') || (argv[1][0] > '9')) & (argv[1][0] != '-'))
 	{
 		printf("Error\n");
 		return (1);
