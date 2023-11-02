@@ -12,14 +12,20 @@
 
 int main(int argc, char *argv[])
 {
-	int i = 0, sum = atoi(argv[1]);
+	int i = 0, sum = 0;
 
-	if ((argc == 1) || !(atoi(argv[1])))
+	if (argc == 1)
 	{
 		printf("Error\n");
 		return (1);
 	}
-	else if (sum < 0)
+	if ((argv[1][0] < '0') || (argv[1][0] > '9'))
+	{
+		printf("Error\n");
+		return (1);
+	}
+	sum = atoi(argv[1]);
+	if (sum <= 0)
 		printf("%d\n", 0);
 	else
 	{
@@ -37,7 +43,7 @@ int main(int argc, char *argv[])
 				sum -= 1;
 			i++;
 		}
+		printf("%d\n", i);
 	}
-	printf("%d\n", i);
 	return (0);
 }
