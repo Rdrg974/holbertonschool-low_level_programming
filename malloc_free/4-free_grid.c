@@ -11,7 +11,11 @@
  * Not return
  */
 
-void free_grid(int **grid, __attribute__((unused)) int height)
+void free_grid(int **grid, int height)
 {
+	int i;
+
+	for (i = 0; i < height; i++)
+		free(grid[i]);
 	free(grid);
 }
