@@ -14,9 +14,12 @@
 
 void *_calloc(unsigned int nmemb, unsigned int size)
 {
+	void *p;
+
 	if ((nmemb == 0) || (size == 0))
 		return (NULL);
-	if (malloc(size * nmemb) == NULL)
+	p = malloc(size * nmemb);
+	if (p == NULL)
 		return (NULL);
-	return (memset(malloc(size * nmemb), 0, nmemb));
+	return (memset(p, 0, nmemb));
 }
