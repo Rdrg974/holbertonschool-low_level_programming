@@ -14,21 +14,19 @@
 
 char *str_concat(char *s1, char *s2)
 {
-	int i = strlen(s1);
-	int k = strlen(s2);
-	int j, l = 0;
+	unsigned int j, l = 0;
 	char *t;
 
 	if (s1 == NULL)
-		return (s2);
+		s1 = "";
 	if (s2 == NULL)
-		return (s1);
-	t = malloc(sizeof(char) * (i + k + 1));
+		s2 = "";
+	t = malloc(sizeof(char) * (strlen(s1) + strlen(s2) + 1));
 	if (t == NULL)
 		return (NULL);
-	for (j = 0; j < (i + k); j++)
+	for (j = 0; j < (strlen(s1) + strlen(s2)); j++)
 	{
-		if (j < i)
+		if (j < strlen(s1))
 			t[j] = s1[j];
 		else
 		{
