@@ -23,7 +23,7 @@ char *str_concat(char *s1, char *s2)
 		return (s2);
 	if (s2 == NULL)
 		return (s1);
-	t = malloc(sizeof(char) * (i + k));
+	t = malloc(sizeof(char) * (i + k + 1));
 	if (t == NULL)
 		return (NULL);
 	for (j = 0; j < (i + k); j++)
@@ -37,6 +37,5 @@ char *str_concat(char *s1, char *s2)
 		}
 	}
 	t[j] = '\0';
-	free(t);
 	return (t);
 }
