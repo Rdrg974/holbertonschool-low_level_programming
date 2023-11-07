@@ -7,8 +7,8 @@
  * _memset - fills memory with a constant byte
  *
  * @s: pointer to a char
- * @b: char
- * @n: unsigned int
+ * @b: pointer to a char
+ * @n: unsigned it
  *
  * Return: s
  */
@@ -40,6 +40,6 @@ void *_calloc(unsigned int nmemb, unsigned int size)
 	p = malloc(size * nmemb);
 	if (p == NULL)
 		return (NULL);
-	p = _memset(p, '\0', nmemb);
+	p = _memset(p, '\0', nmemb * size);
 	return (p);
 }
