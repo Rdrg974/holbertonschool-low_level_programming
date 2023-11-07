@@ -2,6 +2,6 @@
 #ifndef __FUNCTION__LIKE__MACRO__
 #define __FUNCTION__LIKE__MACRO__
 
-#define ABS(X) ((X) < 0 ? (X * (-1)) : (X))
+#define ABS(x) ((x) < (0) ? (x * (-1)) : (x))
 
 #endif
