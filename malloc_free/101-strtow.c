@@ -97,5 +97,6 @@ char **strtow(char *str)
 		}
 		j++;
 	}
+	t[k] = '\0';
 	return (t);
 }
