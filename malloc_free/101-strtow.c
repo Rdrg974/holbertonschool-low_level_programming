@@ -76,7 +76,7 @@ char **strtow(char *str)
 	int i = 0, j = 0, k = 0, l = 0;
 	char **t;
 
-	if ((str == NULL) || ((*str) == 0))
+	if ((str == NULL) || (*str == 0))
 		return (NULL);
 	i = numbword(str);
 	if (i == 0)
@@ -97,6 +97,6 @@ char **strtow(char *str)
 		}
 		j++;
 	}
-	t[k] = '\0';
+	t[k] = NULL;
 	return (t);
 }
