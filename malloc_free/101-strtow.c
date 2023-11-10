@@ -47,7 +47,7 @@ char **tabempty(char *str, int size)
 		l = 0;
 		if (str[j] != ' ')
 		{
-			for (; str[j] != ' '; j++)
+			for (; (str[j] != ' '); j++)
 				l++;
 			t[c] = malloc(sizeof(char) * (l + 1));
 			if (t[c] == NULL)
@@ -76,7 +76,7 @@ char **strtow(char *str)
 	int i = 0, j = 0, k = 0, l = 0;
 	char **t;
 
-	if ((str == NULL) || (strcmp(str, "") == 0))
+	if ((str == NULL) || ((*str) == 0))
 		return (NULL);
 	i = numbword(str);
 	if (i == 0)
@@ -97,6 +97,5 @@ char **strtow(char *str)
 		}
 		j++;
 	}
-	t[k] = NULL;
 	return (t);
 }
