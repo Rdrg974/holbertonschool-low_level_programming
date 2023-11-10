@@ -76,9 +76,11 @@ char **strtow(char *str)
 	int i = 0, j = 0, k = 0, l = 0;
 	char **t;
 
-	if ((str == NULL) || (strcmp(str, "") == 1))
+	if ((str == NULL) || (strcmp(str, "") == 0))
 		return (NULL);
 	i = numbword(str);
+	if (i == 0)
+		return (NULL);
 	t = tabempty(str, i);
 	while (str[j] != '\0')
 	{
