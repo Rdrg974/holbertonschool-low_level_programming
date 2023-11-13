@@ -8,7 +8,6 @@
  * @f: a pointer to a functions
  */
 
-
 void print_name(char *name, void (*f)(char *))
 {
 	f(name);
