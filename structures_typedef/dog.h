@@ -1,6 +1,14 @@
 #ifndef __DOG__H__
 #define __DOG__H__
 
+/**
+ * dog_t - Typedef for struct dog
+ *
+ * @name: first argument
+ * @age: second argument
+ * @owner: third argument
+ */
+
 typedef struct dog
 {
 	char *name;
