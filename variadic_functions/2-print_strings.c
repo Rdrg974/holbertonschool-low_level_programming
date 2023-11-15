@@ -15,21 +15,16 @@ void print_strings(const char *separator, const unsigned int n, ...)
 	char *mot;
 	va_list ap;
 
-	if (n > 0)
+	va_start(ap, n);
+	for (i = 0, mot = va_arg(ap, char *); i < n; mot = va_arg(ap, char *), i++)
 	{
-		va_start(ap, n);
-		for (i = 0, mot = va_arg(ap, char *); i < n; mot = va_arg(ap, char *), i++)
-		{
-			if (mot == NULL)
-				printf("(nil)");
-			else
-			{
-				printf("%s", mot);
-				if ((i != (n - 1)) & (separator != NULL))
-					printf("%s", separator);
-			}
-		}
-		va_end(ap);
-		printf("\n");
+		if (mot == NULL)
+			printf("(nil)");
+		else
+			printf("%s", mot);
+		if ((i != (n - 1)) & (separator != NULL))
+			printf("%s", separator);
 	}
+	printf("\n");
+	va_end(ap);
 }
