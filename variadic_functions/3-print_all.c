@@ -42,10 +42,9 @@ void print_all(const char * const format, ...)
 			else
 				printf("%s", s);
 		}
-		if (format[i + 1] != '\0')
-			if ((type == 'c') || (type == 'f')
-			|| (type == 'i') || (type == 's'))
-				printf(", ");
+		if ((format[i + 1] != '\0') & ((type == 'c') || (type == 'f')
+		|| (type == 'i') || (type == 's')))
+			printf(", ");
 		i++;
 	}
 	va_end(ap);
