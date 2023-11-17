@@ -3,7 +3,6 @@
 
 /**
  * sum_them_all - the sum of all its parameters
- *
  * @n: an integer always positive
  *
  * Return: the sum
