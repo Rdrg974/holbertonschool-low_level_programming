@@ -11,6 +11,8 @@ size_t print_list(const list_t *h)
 	int count = 0;
 	list_t *ptr = NULL;
 
+	if (h == NULL)
+		return (0);
 	ptr = malloc(sizeof(list_t));
 	memcpy(ptr, h, sizeof(list_t));
 	while (ptr != NULL)
