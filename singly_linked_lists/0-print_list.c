@@ -26,6 +26,5 @@ size_t print_list(const list_t *h)
 		count++;
 		ptr = ptr->next;
 	}
-	free(ptr);
 	return (count);
 }
