@@ -1,6 +1,24 @@
 #include "lists.h"
 
 /**
+ * node_empty - creation a node empty
+ * @n: a integer
+ * Return: the node
+ */
+
+dlistint_t *node_empty(int n)
+{
+	dlistint_t *node = malloc(sizeof(dlistint_t));
+
+	if (node == NULL)
+		return (NULL);
+	node->n = n;
+	node->prev = NULL;
+	node->next = NULL;
+	return (node);
+}
+
+/**
  * insert_dnodeint_at_index - inserts a new node at a given position
  * @h: an array of dlistint_t
  * @idx: a given position
@@ -15,24 +33,19 @@ dlistint_t *insert_dnodeint_at_index(dlistint_t **h, unsigned int idx, int n)
 
 	if (*h == NULL)
 		return (NULL);
-	if (idx == 0)
+	else if (idx == 0)
 		add_dnodeint((&(*h)), n);
 	else
 	{
-		newNode = malloc(sizeof(dlistint_t));
-		if (newNode == NULL)
-			return (NULL);
-		newNode->n = n;
-		newNode->prev = NULL;
-		newNode->next = NULL;
-		while (idx != 1)
+		newNode = node_empty(n);
+		while (idx != 1 && temp1 != NULL)
 		{
 			temp1 = temp1->next;
 			idx--;
 		}
 		if (temp1 == NULL)
 			return (NULL);
-		if (temp1->next == NULL)
+		else if (temp1->next == NULL)
 			add_dnodeint_end((&(*h)), n);
 		else
 		{
