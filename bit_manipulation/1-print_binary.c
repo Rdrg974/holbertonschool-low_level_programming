@@ -19,7 +19,6 @@ unsigned long int _pow_recursion(int x, int y)
  * print_binary - prints the binary representation of a number
  * @n: an unigned long integer
  */
-
 void print_binary(unsigned long int n)
 {
 	int i;
