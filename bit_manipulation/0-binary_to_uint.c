@@ -1,20 +1,4 @@
 #include "main.h"
-#include <string.h>
-
-/**
- * pow_recursion - returns the value of x raised to the power of y
- * @x: an integer
- * @y: an integer
- * Return: a value
- */
-unsigned long int pow_recursion(int x, int y)
-{
-	if (y < 0)
-		return (-1);
-	if (y ==  0)
-		return (1);
-	return (x * pow_recursion(x, (y - 1)));
-}
 
 /**
  * binary_to_uint - converts a binary number to an unsigned int
@@ -24,24 +8,17 @@ unsigned long int pow_recursion(int x, int y)
 
 unsigned int binary_to_uint(const char *b)
 {
-	int i, j = 0;
-	unsigned int uint = 0;
+	unsigned int decimal;
+	unsigned int i;
 
-	if (b)
+	for (decimal = 0, i = 0; b[i] != '\0'; i++)
 	{
-		i = strlen(b) - 1;
-		while (b[i] == '0' || b[i] == '1')
-		{
-			if (b[i] == '1')
-			{
-				uint += pow_recursion(2, j);
-				j++, i--;
-			}
-			else
-				i--, j++;
-		}
-		if (i != -1)
+		if (b[i] == '1')
+			decimal = (decimal << 1) | 1;
+		else if (b[i] == '0')
+			decimal <<= 1;
+		else if (b[i] != '0' && b[i] != '1')
 			return (0);
 	}
-	return (uint);
+	return (decimal);
 }
