@@ -1,18 +1,18 @@
 #include "main.h"
 
 /**
- * _pow_recursion - returns the value of x raised to the power of y
+ * pow_recursion - returns the value of x raised to the power of y
  * @x: an integer
  * @y: an integer
  * Return: a value
  */
-unsigned long int _pow_recursion(int x, int y)
+unsigned long int pow_recursion(int x, int y)
 {
 	if (y < 0)
 		return (-1);
 	if (y ==  0)
 		return (1);
-	return (x * _pow_recursion(x, (y - 1)));
+	return (x * pow_recursion(x, (y - 1)));
 }
 
 /**
@@ -24,13 +24,13 @@ void print_binary(unsigned long int n)
 	int i;
 	unsigned long int j = 0;
 
-	for (i = 0; n >= _pow_recursion(2, i); i++)
+	for (i = 0; n >= pow_recursion(2, i); i++)
 		;
 	if (n > 0)
 		i -= 1;
 	for (; i >= 0; i--)
 	{
-		j = _pow_recursion(2, i);
+		j = pow_recursion(2, i);
 		if (n >= j)
 		{
 			n -= j;
