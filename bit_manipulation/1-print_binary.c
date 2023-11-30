@@ -1,42 +1,30 @@
 #include "main.h"
 
 /**
- * pow_recursion - returns the value of x raised to the power of y
- * @x: an integer
- * @y: an integer
- * Return: a value
- */
-unsigned long int pow_recursion(int x, int y)
-{
-	if (y < 0)
-		return (-1);
-	if (y ==  0)
-		return (1);
-	return (x * pow_recursion(x, (y - 1)));
-}
-
-/**
  * print_binary - prints the binary representation of a number
  * @n: an unigned long integer
  */
 void print_binary(unsigned long int n)
 {
-	int i;
-	unsigned long int j = 0;
-
-	for (i = 0; n >= pow_recursion(2, i); i++)
-		;
-	if (n > 0)
-		i -= 1;
-	for (; i >= 0; i--)
+	if (n == 0)
 	{
-		j = pow_recursion(2, i);
-		if (n >= j)
+		_putchar('0');
+		return;
+	}
+
+	int bits = sizeof(unsigned long int) * 8;
+	int leading_zeros = 1;
+
+	for (int i = bits - 1; i >= 0; i--)
+	{
+		unsigned long int mask = 1UL << i;
+
+		if (n & mask)
 		{
-			n -= j;
+			leading_zeros = 0;
 			_putchar('1');
 		}
-		else
+		else if (!leading_zeros)
 			_putchar('0');
 	}
 }
