@@ -2,18 +2,18 @@
 #include <string.h>
 
 /**
- * _pow_recursion - returns the value of x raised to the power of y
+ * pow_recursion - returns the value of x raised to the power of y
  * @x: an integer
  * @y: an integer
  * Return: a value
  */
-unsigned long int _pow_recursion(int x, int y)
+unsigned long int pow_recursion(int x, int y)
 {
 	if (y < 0)
 		return (-1);
 	if (y ==  0)
 		return (1);
-	return (x * _pow_recursion(x, (y - 1)));
+	return (x * pow_recursion(x, (y - 1)));
 }
 
 /**
@@ -34,7 +34,7 @@ unsigned int binary_to_uint(const char *b)
 		{
 			if (b[i] == '1')
 			{
-				uint += _pow_recursion(2, j);
+				uint += pow_recursion(2, j);
 				j++, i--;
 			}
 			else
