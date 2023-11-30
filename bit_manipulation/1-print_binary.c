@@ -6,19 +6,19 @@
  */
 void print_binary(unsigned long int n)
 {
+	int i, bits, leading_zeros;
+	unsigned long int mask;
+
 	if (n == 0)
 	{
 		_putchar('0');
 		return;
 	}
-
-	int bits = sizeof(unsigned long int) * 8;
-	int leading_zeros = 1;
-
-	for (int i = bits - 1; i >= 0; i--)
+	bits = sizeof(unsigned long int) * 8;
+	leading_zeros = 1;
+	for (i = bits - 1; i >= 0; i--)
 	{
-		unsigned long int mask = 1UL << i;
-
+		mask = 1UL << i;
 		if (n & mask)
 		{
 			leading_zeros = 0;
