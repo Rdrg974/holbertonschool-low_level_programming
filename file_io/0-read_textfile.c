@@ -15,13 +15,13 @@ ssize_t read_textfile(const char *filename, size_t letters)
 
 	if (filename)
 	{
-		fd = open(filename, O_RDONLY);
-		if (fd == -1)
-			return (0);
 		buffer = malloc(sizeof(char) * letters);
 		if (buffer == NULL)
+			return (0);
+		fd = open(filename, O_RDONLY);
+		if (fd == -1)
 		{
-			close(fd);
+			free(buffer);
 			return (0);
 		}
 		count = read(fd, buffer, letters);
@@ -31,15 +31,11 @@ ssize_t read_textfile(const char *filename, size_t letters)
 			free(buffer);
 			return (0);
 		}
-		bytes_written = write(1, buffer, letters);
-		if (bytes_written == -1)
-		{
-			close(fd);
-			free(buffer);
-			return (0);
-		}
+		bytes_written = write(STDOUT_FILENO, buffer, count);
 		close(fd);
 		free(buffer);
+		if (bytes_written == -1 || bytes_written != count)
+			return (0);
 	}
 	return (count);
 }
