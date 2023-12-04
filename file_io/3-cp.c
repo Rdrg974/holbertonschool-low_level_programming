@@ -11,7 +11,7 @@ int main(int ac, char **av)
 {
 	int fd1, fd2;
 	int bytes_read, bytes_written;
-	char *buffer[1024];
+	char buffer[1024];
 	mode_t mode = S_IRUSR | S_IWUSR | S_IRGRP | S_IWGRP | S_IROTH;
 
 	if (ac != 3)
