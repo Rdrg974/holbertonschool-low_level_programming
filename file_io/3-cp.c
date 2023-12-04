@@ -34,6 +34,6 @@ int main(int ac, char *av[])
 	if (close(fd1) == -1)
 		dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", fd1), exit(100);
 	if (close(fd2) == -1)
-		dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", fd1), exit(100);
+		dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", fd2), exit(100);
 	exit(EXIT_SUCCESS);
 }
