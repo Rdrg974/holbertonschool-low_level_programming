@@ -7,7 +7,7 @@
  * Return: 0
  */
 
-int main(int ac, char **av)
+int main(int ac, char *av[])
 {
 	int fd1, fd2;
 	int bytes_read, bytes_written;
@@ -22,7 +22,7 @@ int main(int ac, char **av)
 	fd2 = open(av[2], O_CREAT | O_WRONLY | O_TRUNC, mode);
 	if (fd2 == -1)
 		dprintf(STDERR_FILENO, "Error: Can't write to %s\n", av[2]), exit(99);
-	while ((bytes_read = read(fd1, buffer, sizeof(buffer))) > 0)
+	while ((bytes_read = read(fd1, buffer, 1024)) > 0)
 	{
 		bytes_written = write(fd2, buffer, bytes_read);
 		if (bytes_written == -1)
@@ -31,9 +31,7 @@ int main(int ac, char **av)
 	if (bytes_read == -1)
 		dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", av[1]), exit(98);
 
-	if (close(fd1) == -1)
+	if (close(fd1) == -1 || close(fd2) == -1)
 		dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", fd1), exit(100);
-	if (close(fd2) == -1)
-		dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", fd2), exit(100);
-	return (0);
+	exit(EXIT_SUCCESS);
 }
