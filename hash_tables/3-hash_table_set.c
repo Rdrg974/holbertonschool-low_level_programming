@@ -30,20 +30,37 @@ hash_node_t *create_node(const char *key, const char *value)
 
 int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 {
-	unsigned int idx;
-	hash_node_t *new_node;
+	unsigned long int index;
+	hash_node_t *new_node, *current;
 
-	if (ht || key[0] != '\0')
+	if (strcmp(key, "") == 0 || key == NULL || ht == NULL)
+		return (0);
+	index = key_index((const unsigned char *)key, ht->size);
+	new_node = create_node(key, value);
+	if (ht->array[index] == NULL)
+		ht->array[index] = new_node;
+	else
 	{
-		idx = hash_djb2((const unsigned char *)key);
-		new_node = create_node(key, value);
-		if (!new_node)
-			return (0);
-		if (ht->array[idx])
-			new_node->next = ht->array[idx];
-
-		ht->array[idx] = new_node;
-		return (1);
+		current = ht->array[index];
+		if (strcmp(current->key, key) == 0)
+		{
+			new_node->next = current->next;
+			ht->array[index] = new_node;
+			return (1);
+		}
+		while (current->next != NULL && strcmp(current->next->key, key) != 0)
+		{ current = current->next;
+		}
+		if (strcmp(current->key, key) == 0)
+		{
+			new_node->next = current->next->next;
+			current->next = new_node;
+		}
+		else
+		{
+			new_node->next = ht->array[index];
+			ht->array[index] = new_node;
+		}
 	}
-	return (0);
+	return (1);
 }
