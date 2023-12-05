@@ -38,7 +38,15 @@ hash_table_t *hash_table_create(unsigned long int size)
 			return (NULL);
 		}
 		for (i = 0; i < str->size; i++)
+		{
 			str->array[i] = array_of_node();
+			if (str->array[i] == NULL)
+			{
+				free(str->array);
+				free(str);
+				return (NULL);
+			}
+		}
 		return (str);
 	}
 	return (NULL);
