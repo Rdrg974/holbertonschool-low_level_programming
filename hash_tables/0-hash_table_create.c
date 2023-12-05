@@ -9,6 +9,8 @@ hash_node_t *array_of_node()
 	hash_node_t *array;
 
 	array = malloc(sizeof(hash_node_t));
+	if (array == NULL)
+		return (NULL);
 	return (array);
 }
 
@@ -30,10 +32,10 @@ hash_table_t *hash_table_create(unsigned long int size)
 			return (NULL);
 		str->size = size;
 		str->array = malloc(sizeof(hash_node_t *) * size);
+		if (str->array == NULL)
+			return (NULL);
 		for (i = 0; i < str->size; i++)
-		{
 			str->array[i] = array_of_node();
-		}
 		return (str);
 	}
 	return (NULL);
