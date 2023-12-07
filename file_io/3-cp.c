@@ -17,7 +17,7 @@ int main(int ac, char *av[])
 	mode_t mode = S_IRUSR | S_IWUSR | S_IRGRP | S_IWGRP | S_IROTH;
 
 	if (ac != 3)
-		dprintf(STDERR_FILENO, "Usage: cp file_from file_to"), exit(97);
+		dprintf(STDERR_FILENO, "Usage: cp file_from file_to\n"), exit(97);
 	file_from = av[1];
 	file_to = av[2];
 	fd1 = open(file_from, O_RDONLY);
