@@ -29,7 +29,7 @@ int main(int ac, char *av[])
 	fd2 = open(file_to, O_CREAT | O_TRUNC | O_WRONLY, mode);
 	if (fd2 == -1)
 		dprintf(STDERR_FILENO, "Error: Can't write to %s\n", file_to), exit(99);
-	while ((bytes_read = read(fd1, buffer, BUFSIZE)) != 0)
+	while ((bytes_read = read(fd1, buffer, BUFSIZE)) > 0)
 	{
 		bytes_written = write(fd2, buffer, bytes_read);
 		if (bytes_written != bytes_read)
