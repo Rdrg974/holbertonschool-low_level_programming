@@ -1,5 +1,12 @@
 #include "search_algos.h"
 
+/**
+ * print_array - print an array
+ * @array: an array of integers
+ * @i: first element to print
+ * @j: last element to print
+ */
+
 void print_array(int *array, int i, int j)
 {
 	printf("Searching in array: ");
@@ -8,7 +15,7 @@ void print_array(int *array, int i, int j)
 		printf("%d", array[i]);
 		i++;
 		if (i <= j)
-			printf(" ");
+			printf(", ");
 	}
 	printf("\n");
 }
